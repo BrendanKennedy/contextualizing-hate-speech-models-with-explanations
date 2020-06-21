@@ -379,7 +379,7 @@ class _SamplingAndOcclusionAlgo(_SamplingAndOcclusionBaseAlgo):
             return contrib_score
 
     def do_attribution(self, input_ids, input_mask, segment_ids, region, label=None, return_variable=False,
-                       additional_mask=None):
+                       additional_mask=[]):
         inp_flatten = input_ids.view(-1).cpu().numpy()
         inp_mask_flatten = input_mask.view(-1).cpu().numpy()
         mask_regions = self.get_ngram_mask_region(region, inp_flatten)
@@ -389,7 +389,7 @@ class _SamplingAndOcclusionAlgo(_SamplingAndOcclusionBaseAlgo):
         return score
 
     def do_attribution_pad_variant(self, input_ids, input_mask, segment_ids, region, label=None, return_variable=False,
-                                   additional_mask=None):
+                                   additional_mask=[]):
         """
         A variant of SOC algorithm that pads the context instead of sampling. Will be faster but it will degenerate into
         direct feed, which is trivial and performs not as good as original SOC. Used for debugging.
