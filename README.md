@@ -21,7 +21,7 @@ chmod +x ./scripts/*
 
 ## Data
 ### Gab Hate Corpus
-The Gab Hate Corpus (GHC) is available at https://osf.io/edua3/. Convert file into jsonl format and put train/dev/test.jsonl under `data/majority_gab_dataset_25k`, where each line is a json dict.
+The full Gab Hate Corpus (GHC) is available at https://osf.io/edua3/. Here, data files are prepared in train/dev/test.jsonl under `data/majority_gab_dataset_25k` in jsonl, where each line is a json dict.
 
 ```
 {"text_id":31287737,"Text":"How is that one post not illegal? He is calling for someone to commit a specific crime or he will do it himself. ","im":0,"cv":0,"ex":0,"hd":0,"mph":0,"gen":0,"rel":0,"sxo":0,"rae":0,"nat":0,"pol":0,"vo":0,"idl":0}
